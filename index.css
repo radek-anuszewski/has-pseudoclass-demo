@@ -1,0 +1,42 @@
+html {
+    --color-regular: black;
+    --color-error: red;
+    --color-success: green;
+    --validation-color: var(--color-regular);
+}
+
+#form {
+    padding: 8px;
+}
+.form-group {
+    width: 200px;
+    padding: 8px;
+    border: 1px solid var(--validation-color);
+    color: var(--validation-color);
+}
+
+
+input {
+    border: 1px solid var(--validation-color);
+    color: inherit;
+}
+
+.form-group[\:has\(\:invalid\)] {
+    --validation-color: var(--color-error);
+}
+
+.form-group:has(:invalid) {
+    --validation-color: var(--color-error);
+}
+
+ .form-group[\:has\(\:valid\)] {
+    --validation-color: var(--color-success);
+}
+
+ .form-group:has(:valid) {
+    --validation-color: var(--color-success);
+}
+
+.form-group.pristine {
+    --validation-color: var(--color-regular);
+}
